@@ -3,7 +3,11 @@
   <p class="text-center">This is home page for the ROR sample application</p>
   <div class="row justify-content-center">
     <div class="col-sm-6 text-center">
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-outline-info" %>
+      <% if logged_in? %>
+        <h3> <%= @current_user.name %></h3>
+      <% else %>
+       <%= link_to "Sign up now!", signup_path, class: "btn btn-outline-info" %>
+      <% end %>
     </div>
   </div>
 

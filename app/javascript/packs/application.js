@@ -14,5 +14,3 @@ import "./stylesheets/custom.scss"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-

@@ -1,22 +1,6 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  host = 'localhost:3000' 
-  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
-  
-  # config.action_mailer.delivery_method = :letter_oppener
-  config.action_mailer.perform_deliveries = true
- 
-   
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'anhkhongvip2107@gmail.com',
-    password:             'fncmljueirqualsm',
-    authentication:       'plain',
-    enable_starttls_auto: true }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -50,7 +34,24 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
+
+  host = 'localhost:3000' 
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  
+  # config.action_mailer.delivery_method = :letter_oppener
+  config.action_mailer.perform_deliveries = true
+ 
+   
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            'anhkhongvip2107@gmail.com',
+    password:             'fncmljueirqualsm',
+    authentication:       'plain',
+    enable_starttls_auto: true }
 
   config.action_mailer.perform_caching = false
 
